@@ -16,9 +16,9 @@ final class MeController
     public function __invoke(UserInterface $user): JsonResponse
     {
         return new JsonResponse([
-            'id' => method_exists($user, 'getId') ? $user->getId() : null,
-            'email' => method_exists($user, 'getEmail') ? $user->getEmail() : null,
-            'roles' => method_exists($user, 'getRoles') ? $user->getRoles() : [],
+            'id' => $user->getId(),
+            'email' => $user->getEmail(),
+            'roles' => $user->getRoles(),
         ]);
     }
 }
